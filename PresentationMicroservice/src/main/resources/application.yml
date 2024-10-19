@@ -1,0 +1,66 @@
+##spring:
+#  application:
+#    name: "PresentationMicroservice"
+#  kafka:
+#    bootstrap-servers: localhost:29092
+#    consumer:
+#      group-id: presentation.1
+#      key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+#      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+#      properties:
+#        spring.json.set.use.type.mapper.for.key: false
+#        spring.json.set.remove.type.headers: false
+#        spring.json.trusted.packages: "*"
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+#    properties:
+#      standardTimeout: 30000
+#  devtools:
+#    restart:
+#      enabled: true
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/users
+#    username: "postgres"
+#    password: "password"
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#server:
+#  port: 8080
+
+
+
+spring:
+  application:
+    name: "PresentationMicroservice"
+  kafka:
+    bootstrap-servers: localhost:29092
+    consumer:
+      group-id: presentation.1
+      key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.set.use.type.mapper.for.key: false
+        spring.json.set.remove.type.headers: false
+        spring.json.trusted.packages: "*"
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.LongSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    properties:
+      standardTimeout: 30000
+  devtools:
+    restart:
+      enabled: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: "postgres"
+    password: "password"
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+server:
+  port: 8080
